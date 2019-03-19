@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$tvmaze-primary: mat-palette($mat-indigo);
-$tvmaze-accent: mat-palette($mat-pink, A200, A100, A400);
+$tvmaze-primary: mat-palette($mat-deep-orange);
+$tvmaze-accent: mat-palette($mat-blue-gray, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $tvmaze-warn: mat-palette($mat-red);
@@ -29,4 +29,4 @@ $tvmaze-theme: mat-light-theme($tvmaze-primary, $tvmaze-accent, $tvmaze-warn);
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: mat-color($tvmaze-accent)}

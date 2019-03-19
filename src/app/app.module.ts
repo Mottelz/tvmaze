@@ -7,6 +7,12 @@ import { SearchComponent } from './views/search/search.component';
 import { ShowsComponent } from './views/shows/shows.component';
 import { ShowComponent } from './views/show/show.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -18,8 +24,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
-  ],
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    FlexLayoutModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })
