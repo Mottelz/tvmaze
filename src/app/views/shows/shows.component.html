@@ -7,7 +7,7 @@
     </mat-expansion-panel-header>
     <p>{{show.summary | strip}}</p>
     <br>
-    <button mat-flat-button color="primary" routerLink="show/{{show.id}}">Details</button>
+    <button mat-flat-button color="primary" [routerLink]="['/show', show.id]">Details</button>
 
   </mat-expansion-panel>
 </mat-accordion>
