@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Show} from '../../models/show';
 
 @Component({
   selector: 'app-show',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show.component.sass']
 })
 export class ShowComponent implements OnInit {
-
+  @Input() show: Show;
   constructor() { }
 
   ngOnInit() {

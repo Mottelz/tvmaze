@@ -17,7 +17,6 @@ export class SearchComponent implements OnInit {
 
   onSubmit(): void {
     this.tvmaze.fetchShows(this.searchQuery).subscribe(shows => {
-      console.log('Sending: ' + shows);
       this.showList.emit(shows);
     });
   }

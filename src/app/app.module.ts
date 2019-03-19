@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { StripPipe } from './controllers/strip.pipe';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { StripPipe } from './controllers/strip.pipe';
     MatIconModule,
     FlexLayoutModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    RouterModule
 ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,8 +3,11 @@
     <mat-expansion-panel-header fxLayout="row">
       <mat-panel-title fxFlex="33">{{show.name}}</mat-panel-title>
       <mat-panel-description fxFlex="16">Premiered: {{show.premiered}}</mat-panel-description>
-      <mat-panel-description fxFlex="16">Status: {{show.premiered}}</mat-panel-description>
+      <mat-panel-description fxFlex="16">Status: {{show.status}}</mat-panel-description>
     </mat-expansion-panel-header>
     <p>{{show.summary | strip}}</p>
+    <br>
+    <button mat-flat-button color="primary" routerLink="show/{{show.id}}">Details</button>
+
   </mat-expansion-panel>
 </mat-accordion>
