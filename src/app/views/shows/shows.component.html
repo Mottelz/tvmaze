@@ -1,3 +1,10 @@
-<p>
-  shows works!
-</p>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let show of shows">
+    <mat-expansion-panel-header fxLayout="row">
+      <mat-panel-title fxFlex="33">{{show.name}}</mat-panel-title>
+      <mat-panel-description fxFlex="16">Premiered: {{show.premiered}}</mat-panel-description>
+      <mat-panel-description fxFlex="16">Status: {{show.premiered}}</mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{show.summary | strip}}</p>
+  </mat-expansion-panel>
+</mat-accordion>

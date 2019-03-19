@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { TvmazeService } from '../../models/services/tvmaze.service';
+import {Show} from '../../models/show';
 
 @Component({
   selector: 'app-search',
@@ -8,13 +9,17 @@ import { TvmazeService } from '../../models/services/tvmaze.service';
 })
 export class SearchComponent implements OnInit {
   searchQuery: string;
+  @Output() showList: EventEmitter<Show[]> = new EventEmitter();
   constructor(private tvmaze: TvmazeService) { }
 
   ngOnInit() {
   }
 
   onSubmit(): void {
-    this.tvmaze.fetchShows(this.searchQuery).subscribe(shows => console.log(shows));
+    this.tvmaze.fetchShows(this.searchQuery).subscribe(shows => {
+      console.log('Sending: ' + shows);
+      this.showList.emit(shows);
+    });
   }
 
 }

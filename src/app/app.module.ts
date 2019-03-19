@@ -13,13 +13,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { StripPipe } from './controllers/strip.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     ShowsComponent,
-    ShowComponent
+    ShowComponent,
+    StripPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatButtonModule,
     MatIconModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule
 ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,10 @@
                    fxFlexFill>
     <span fxFlex="15" fxHide.lt-sm>TV Project</span>
     <div fxFlex="60" fxHide.lt-sm></div>
-    <app-search fxFlex="15"></app-search>
+    <app-search fxFlex="15" (showList)="onShowsUpdate($event)"></app-search>
   </mat-toolbar-row>
 </mat-toolbar>
+<div class="container">
+  <app-shows [shows]="shows"></app-shows>
+</div>
 <router-outlet></router-outlet>
