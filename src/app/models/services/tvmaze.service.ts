@@ -18,4 +18,9 @@ export class TvmazeService {
       })
     );
   }
+
+  fetchShow(showID: string) {
+    const url = this.base + '/shows/' + showID;
+    return this.http.get(url);
+  }
 }

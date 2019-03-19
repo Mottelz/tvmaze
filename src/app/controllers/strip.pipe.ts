@@ -6,11 +6,9 @@ import * as _ from 'lodash';
 export class StripPipe implements PipeTransform {
 
   transform(raw: string): string {
-    const tags = ['<p>', '</p>', '<br>', '<b>', '</b>', '<i>', '</i>'];
-    for ( const tag of tags) {
-      raw = _.replace(raw, tag, '');
-    }
-    return _.unescape(raw);
+    let final = raw.replace(/<[^>]*>/g, '');
+    final = _.unescape(final);
+    return final;
   }
 
 }
