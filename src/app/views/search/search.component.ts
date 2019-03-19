@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { TvmazeService } from '../../models/services/tvmaze.service';
 
 @Component({
   selector: 'app-search',
@@ -8,10 +8,13 @@ import { FormControl } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
   searchQuery: string;
-  search = new FormControl('');
-  constructor() { }
+  constructor(private tvmaze: TvmazeService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(): void {
+    this.tvmaze.fetchShows(this.searchQuery).subscribe(shows => console.log(shows));
   }
 
 }
