@@ -22,7 +22,7 @@ export class ShowComponent implements OnInit {
     this.tvmaze.fetchShow(id).subscribe(res => {
       this.show = new Show(res);
       this.tvmaze.fetchEpisodes(this.show.id).subscribe((episodes: Episode[]) => {
-        this.show.episodes = episodes;
+        this.show.addEpisodes(episodes);
       });
     });
   }

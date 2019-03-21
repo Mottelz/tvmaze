@@ -18,6 +18,12 @@ import { StripPipe } from './controllers/strip.pipe';
 import {RouterModule} from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import { SafePipe } from './controllers/safe.pipe';
+import {MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
+import { SeasonComponent } from './views/season/season.component';
+import { MatSortModule } from '@angular/material';
+import { EpisodeNumberFormatterPipe } from './controllers/episode-number-formatter.pipe';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,9 @@ import { SafePipe } from './controllers/safe.pipe';
     ShowsComponent,
     ShowComponent,
     StripPipe,
-    SafePipe
+    SafePipe,
+    SeasonComponent,
+    EpisodeNumberFormatterPipe
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,11 @@ import { SafePipe } from './controllers/safe.pipe';
     FormsModule,
     MatExpansionModule,
     RouterModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatDividerModule,
+    MatSortModule,
+    MatTooltipModule
 ],
   providers: [],
   bootstrap: [AppComponent]

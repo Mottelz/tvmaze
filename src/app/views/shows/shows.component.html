@@ -5,9 +5,14 @@
       <mat-panel-description fxFlex="16">Premiered: {{show.premiered}}</mat-panel-description>
       <mat-panel-description fxFlex="16">Status: {{show.status}}</mat-panel-description>
     </mat-expansion-panel-header>
-    <p *ngIf="show.summary">{{show.summary | strip}}</p>
-    <br>
-    <button mat-flat-button color="primary" [routerLink]="['/show', show.id]">Details</button>
-
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <img *ngIf="show.image" src="{{show.image}}" alt="Image" fxFlex="25">
+      <div fxFlex="70">
+        <p *ngIf="show.summary">{{show.summary | strip}}</p>
+        <mat-action-row>
+          <button mat-flat-button color="primary" [routerLink]="['/show', show.id]">Details</button>
+        </mat-action-row>
+      </div>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>

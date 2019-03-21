@@ -9,4 +9,12 @@
       <p *ngIf="show.summary">{{show.summary | strip}}</p>
     </mat-card-content>
   </mat-card>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let season of show.episodes">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Season {{season[0].season}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-season [season]="season"></app-season>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
