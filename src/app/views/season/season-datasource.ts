@@ -52,7 +52,8 @@ export class SeasonDataSource extends DataSource<Episode> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'number': return compare(a.season + a.episode, b.season + b.episode, isAsc);
+        case 'airDate': return compare(a.airDate, b.airDate, isAsc);
         default: return 0;
       }
     });
