@@ -17,12 +17,26 @@ export class ShowsComponent implements OnInit {
   ngOnInit() {
   }
 
-  loadShows(query: string) {
+  loadShows(query: string): void {
     this.tvmaze.fetchShows(query).subscribe(
       shows => {
         this.shows = shows;
+        this.loadFirstAndLastEpisodes();
       }
     );
+  }
+
+  loadFirstAndLastEpisodes(): void {
+    this.shows.forEach(show => {
+      if (show.lastEpLink) {
+        this.tvmaze.fetchEpisodeByURL(show.lastEpLink).subscribe(ep => show.lastEp = ep);
+      }
+
+      if (show.nextEpLink) {
+        this.tvmaze.fetchEpisodeByURL(show.nextEpLink).subscribe(ep => show.nextEp = ep);
+      }
+    });
+    console.log(this.shows);
   }
 
 }

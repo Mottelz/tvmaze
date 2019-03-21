@@ -11,6 +11,8 @@ export class Show {
   image: string;
   lastEp: Episode;
   nextEp: Episode;
+  lastEpLink: string;
+  nextEpLink: string;
   episodes: Episode[][];
 
   constructor(a?) {
@@ -22,6 +24,10 @@ export class Show {
       this.runtime = a.runtime;
       this.summary = a.summary;
       this.image = (a.image) ? a.image.original : null;
+      if (a._links) {
+        this.lastEpLink = (a._links.previousepisode) ? a._links.previousepisode.href : null;
+        this.nextEpLink = (a._links.nextepisode) ? a._links.nextepisode.href : null;
+      }
     }
   }
 
