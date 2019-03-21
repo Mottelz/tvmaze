@@ -5,7 +5,7 @@
       <mat-panel-description fxFlex="16">Premiered: {{show.premiered}}</mat-panel-description>
       <mat-panel-description fxFlex="16">Status: {{show.status}}</mat-panel-description>
     </mat-expansion-panel-header>
-    <p>{{show.summary | strip}}</p>
+    <p *ngIf="show.summary">{{show.summary | strip}}</p>
     <br>
     <button mat-flat-button color="primary" [routerLink]="['/show', show.id]">Details</button>
 

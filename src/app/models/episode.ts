@@ -12,7 +12,7 @@ export class Episode {
       this.id = a.id;
       this.name = a.name;
       this.season = a.season;
-      this.episode = a.episode;
+      this.episode = a.number;
       this.airDate = a.airdate;
       this.summary = a.summary;
       this.image = (a.image) ? a.image.original : null;

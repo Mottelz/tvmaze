@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Show} from '../../models/show';
 import {ActivatedRoute} from '@angular/router';
 import {TvmazeService} from '../../models/services/tvmaze.service';
+import {Episode} from '../../models/episode';
 
 @Component({
   selector: 'app-show',
@@ -18,6 +19,11 @@ export class ShowComponent implements OnInit {
   }
 
   loadShow(id: string) {
-    this.tvmaze.fetchShow(id).subscribe(res => this.show = new Show(res));
+    this.tvmaze.fetchShow(id).subscribe(res => {
+      this.show = new Show(res);
+      this.tvmaze.fetchEpisodes(this.show.id).subscribe((episodes: Episode[]) => {
+        this.show.episodes = episodes;
+      });
+    });
   }
 }

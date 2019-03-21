@@ -16,6 +16,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { StripPipe } from './controllers/strip.pipe';
 import {RouterModule} from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import { SafePipe } from './controllers/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {RouterModule} from '@angular/router';
     SearchComponent,
     ShowsComponent,
     ShowComponent,
-    StripPipe
+    StripPipe,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import {RouterModule} from '@angular/router';
     FlexLayoutModule,
     FormsModule,
     MatExpansionModule,
-    RouterModule
+    RouterModule,
+    MatCardModule
 ],
   providers: [],
   bootstrap: [AppComponent]

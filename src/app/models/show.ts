@@ -10,7 +10,7 @@ export class Show {
   image: string;
   lastEp: Episode;
   nextEp: Episode;
-  episodes: Episode;
+  episodes: Episode[];
 
   constructor(a?) {
     if (a) {

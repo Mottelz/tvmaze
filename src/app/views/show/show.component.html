@@ -1,1 +1,12 @@
-<p>{{show.name}}</p>
+<div *ngIf="show">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar style="background-size: cover;" [style.background-image]="'url(' + show.image + ')' | safe: 'style'"></div>
+      <mat-card-title>{{show.name}}</mat-card-title>
+      <mat-card-subtitle>Started: {{show.premiered | date}} | Status: {{show.status}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngIf="show.summary">{{show.summary | strip}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
