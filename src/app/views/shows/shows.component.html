@@ -9,6 +9,10 @@
       <img *ngIf="show.image" src="{{show.image}}" alt="Image" fxFlex="25">
       <div fxFlex="70">
         <p *ngIf="show.summary">{{show.summary | strip}}</p>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <p fxFlex="50" *ngIf="show.lastEp">Last Ep: <b>{{show.lastEp.name}}</b></p>
+          <p fxFlex="50" *ngIf="show.nextEp">Next Ep: <b>{{show.nextEp.name}}</b></p>
+        </div>
         <mat-action-row>
           <button mat-flat-button color="primary" [routerLink]="['/show', show.id]">Details</button>
         </mat-action-row>

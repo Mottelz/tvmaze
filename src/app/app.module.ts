@@ -7,23 +7,23 @@ import { SearchComponent } from './views/search/search.component';
 import { ShowsComponent } from './views/shows/shows.component';
 import { ShowComponent } from './views/show/show.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatInputModule} from '@angular/material/input';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { StripPipe } from './controllers/strip.pipe';
-import {RouterModule} from '@angular/router';
-import {MatCardModule} from '@angular/material/card';
+import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 import { SafePipe } from './controllers/safe.pipe';
-import {MatTableModule} from '@angular/material/table';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
 import { SeasonComponent } from './views/season/season.component';
 import { MatSortModule } from '@angular/material';
 import { EpisodeNumberFormatterPipe } from './controllers/episode-number-formatter.pipe';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HttpClientModule,
     MatToolbarModule,
     MatInputModule,
-    ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
     FlexLayoutModule,

@@ -4,6 +4,7 @@ export class Episode {
   season: number;
   episode: number;
   airDate: string;
+  airTime: string;
   summary: string;
   image: string;
 
@@ -14,6 +15,7 @@ export class Episode {
       this.season = a.season;
       this.episode = a.number;
       this.airDate = a.airdate;
+      this.airTime = a.airtime;
       this.summary = a.summary;
       this.image = (a.image) ? a.image.original : null;
     }
