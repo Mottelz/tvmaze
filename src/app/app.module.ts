@@ -24,6 +24,7 @@ import { SeasonComponent } from './views/season/season.component';
 import { MatSortModule } from '@angular/material';
 import { EpisodeNumberFormatterPipe } from './controllers/episode-number-formatter.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { HistoryService } from './controllers/history.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSortModule,
     MatTooltipModule
 ],
-  providers: [],
+  providers: [HistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
