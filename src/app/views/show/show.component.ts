@@ -3,6 +3,7 @@ import {Show} from '../../models/show';
 import {ActivatedRoute} from '@angular/router';
 import {TvmazeService} from '../../models/services/tvmaze.service';
 import {Episode} from '../../models/episode';
+import {HistoryService} from '../../controllers/history.service';
 
 @Component({
   selector: 'app-show',
@@ -11,8 +12,11 @@ import {Episode} from '../../models/episode';
 })
 export class ShowComponent implements OnInit {
   show: Show;
-  constructor(private routeSnap: ActivatedRoute, private tvmaze: TvmazeService) {
-    routeSnap.paramMap.subscribe(pm => this.loadShow(pm.get('id')));
+  constructor(private routeSnap: ActivatedRoute, private tvmaze: TvmazeService, private history: HistoryService) {
+    routeSnap.paramMap.subscribe(pm => {
+      this.loadShow(pm.get('id'));
+      this.history.addShowToHistory(pm.get('id'));
+    });
   }
 
   ngOnInit() {
