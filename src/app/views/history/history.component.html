@@ -1,0 +1,8 @@
+<mat-card>
+  <mat-card-title>History</mat-card-title>
+  <mat-list>
+    <mat-list-item *ngFor="let show of history">
+      <p routerLink="/show/{{show.id}}"><i class="fas fa-tv"></i> {{show.id}} - {{show.name}}</p>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

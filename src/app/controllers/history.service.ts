@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import PouchDB from 'pouchdb';
-import {error} from '@angular/compiler/src/util';
-
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +26,7 @@ export class HistoryService {
         this.db.put(doc);
       })
       // If there's no history doc create it.
-      .catch(err => {
+      .catch(() => {
         this.db.put({
           _id: 'history',
           shows: []
@@ -43,7 +41,7 @@ export class HistoryService {
         this.db.put(doc);
       })
       // If there's no history doc create it.
-      .catch(err => {
+      .catch(() => {
         this.db.put({
           _id: 'history',
           shows: []

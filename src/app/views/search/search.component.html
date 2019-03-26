@@ -1,7 +1,8 @@
 <mat-form-field>
-  <input matInput type="text" placeholder="Show" [(ngModel)]="searchQuery">
+  <label for="search"></label>
+  <input id="search" matInput type="text" placeholder="Show" [(ngModel)]="searchQuery">
   <button mat-button *ngIf="searchQuery" matSuffix mat-icon-button aria-label="Clear" (click)="searchQuery=''">
-    <mat-icon>close</mat-icon>
+    <i class="far fa-times-circle"></i>
   </button>
 </mat-form-field>
 <button mat-raised-button (click)="onSubmit()" style="margin-left: 5px">Submit</button>

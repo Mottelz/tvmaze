@@ -11,7 +11,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { StripPipe } from './controllers/strip.pipe';
@@ -25,6 +24,8 @@ import { MatSortModule } from '@angular/material';
 import { EpisodeNumberFormatterPipe } from './controllers/episode-number-formatter.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HistoryService } from './controllers/history.service';
+import { HistoryComponent } from './views/history/history.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HistoryService } from './controllers/history.service';
     StripPipe,
     SafePipe,
     SeasonComponent,
-    EpisodeNumberFormatterPipe
+    EpisodeNumberFormatterPipe,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,6 @@ import { HistoryService } from './controllers/history.service';
     MatToolbarModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule,
     FlexLayoutModule,
     FormsModule,
     MatExpansionModule,
@@ -54,7 +55,8 @@ import { HistoryService } from './controllers/history.service';
     MatTableModule,
     MatDividerModule,
     MatSortModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatListModule
 ],
   providers: [HistoryService],
   bootstrap: [AppComponent]
