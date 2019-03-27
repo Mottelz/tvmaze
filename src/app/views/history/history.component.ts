@@ -21,6 +21,6 @@ export class HistoryComponent implements OnInit {
 
   clearHistory() {
     this.historyService.clearHistory();
-    this.router.navigate(['/history']).then(res => console.log(res));
+    this.router.navigateByUrl('/');
   }
 }

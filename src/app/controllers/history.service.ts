@@ -23,8 +23,11 @@ export class HistoryService {
   addShowToHistory(showId: string, showName: string): void {
     this.db.get('history')
       .then((doc) => {
-        doc.shows.push({id: showId, name: showName});
-        this.db.put(doc);
+        const checker = doc.shows.filter(show => show.id === showId);
+        if (checker.length < 1) {
+          doc.shows.push({id: showId, name: showName});
+          this.db.put(doc);
+        }
       })
       // If there's no history doc create it.
       .catch(() => {
