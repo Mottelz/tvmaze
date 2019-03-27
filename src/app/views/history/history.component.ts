@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HistoryService} from '../../controllers/history.service';
-import {Show} from '../../models/show';
-import {TvmazeService} from '../../models/services/tvmaze.service';
+import {HistoryItem} from '../../models/history-item';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -9,19 +9,18 @@ import {TvmazeService} from '../../models/services/tvmaze.service';
   styleUrls: ['./history.component.scss']
 })
 export class HistoryComponent implements OnInit {
-  history: Show[];
-  constructor(private historyService: HistoryService, private tvmaze: TvmazeService) {
-    this.history = [];
-  }
-
-  ngOnInit() {
+  history: HistoryItem[];
+  constructor(private historyService: HistoryService, private router: Router) {
     this.historyService.getHistory().then(hist => {
-      hist.map(sid => {
-        this.tvmaze.fetchShow(sid).subscribe(
-          res => this.history.unshift(new Show(res))
-        );
-      });
+      this.history = hist;
     });
   }
 
+  ngOnInit() {
+  }
+
+  clearHistory() {
+    this.historyService.clearHistory();
+    this.router.navigate(['/history']).then(res => console.log(res));
+  }
 }

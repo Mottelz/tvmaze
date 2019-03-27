@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import PouchDB from 'pouchdb';
+import { HistoryItem } from '../models/history-item';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class HistoryService {
     this.db = new PouchDB('app-history');
   }
 
-  async getHistory(): Promise<string[]> {
+  async getHistory(): Promise<HistoryItem[]> {
     let toReturn = [];
     await this.db.get('history').then(doc => {
       toReturn = doc.shows;
@@ -19,10 +20,10 @@ export class HistoryService {
     return toReturn;
   }
 
-  addShowToHistory(showid: string): void {
+  addShowToHistory(showId: string, showName: string): void {
     this.db.get('history')
       .then((doc) => {
-        doc.shows.push(showid);
+        doc.shows.push({id: showId, name: showName});
         this.db.put(doc);
       })
       // If there's no history doc create it.

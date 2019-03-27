@@ -1,8 +1,14 @@
 <mat-card>
-  <mat-card-title>History</mat-card-title>
+  <mat-card-header>
+    <mat-card-title>History
+      <button mat-icon-button (click)="clearHistory()">
+        <i class="far fa-trash-alt"></i>
+      </button>
+    </mat-card-title>
+  </mat-card-header>
   <mat-list>
-    <mat-list-item *ngFor="let show of history">
-      <p routerLink="/show/{{show.id}}"><i class="fas fa-tv"></i> {{show.id}} - {{show.name}}</p>
+    <mat-list-item *ngFor="let item of history">
+      <p routerLink="/show/{{item.id}}"><i class="fas fa-tv"></i> {{item.id}} - {{item.name}}</p>
     </mat-list-item>
   </mat-list>
 </mat-card>

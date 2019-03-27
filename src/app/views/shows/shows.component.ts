@@ -36,7 +36,6 @@ export class ShowsComponent implements OnInit {
         this.tvmaze.fetchEpisodeByURL(show.nextEpLink).subscribe(ep => show.nextEp = ep);
       }
     });
-    console.log(this.shows);
   }
 
 }

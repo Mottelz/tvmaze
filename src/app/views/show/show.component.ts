@@ -15,7 +15,6 @@ export class ShowComponent implements OnInit {
   constructor(private routeSnap: ActivatedRoute, private tvmaze: TvmazeService, private history: HistoryService) {
     routeSnap.paramMap.subscribe(pm => {
       this.loadShow(pm.get('id'));
-      this.history.addShowToHistory(pm.get('id'));
     });
   }
 
@@ -25,6 +24,7 @@ export class ShowComponent implements OnInit {
   loadShow(id: string) {
     this.tvmaze.fetchShow(id).subscribe(res => {
       this.show = new Show(res);
+      this.history.addShowToHistory(this.show.id.toString(), this.show.name);
       this.tvmaze.fetchEpisodes(this.show.id).subscribe((episodes: Episode[]) => {
         this.show.addEpisodes(episodes);
       });
