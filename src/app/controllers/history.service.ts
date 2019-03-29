@@ -38,8 +38,8 @@ export class HistoryService {
       });
   }
 
-  clearHistory(): void {
-    this.db.get('history')
+  async clearHistory(): Promise<boolean> {
+    await this.db.get('history')
       .then((doc) => {
         doc.shows = [];
         this.db.put(doc);
@@ -51,5 +51,7 @@ export class HistoryService {
           shows: []
         });
       });
+
+    return true;
   }
 }

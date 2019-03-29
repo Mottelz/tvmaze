@@ -23,7 +23,6 @@ import { SeasonComponent } from './views/season/season.component';
 import { MatSortModule } from '@angular/material';
 import { EpisodeNumberFormatterPipe } from './controllers/episode-number-formatter.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { HistoryService } from './controllers/history.service';
 import { HistoryComponent } from './views/history/history.component';
 import { MatListModule } from '@angular/material/list';
 
@@ -58,7 +57,7 @@ import { MatListModule } from '@angular/material/list';
     MatTooltipModule,
     MatListModule
 ],
-  providers: [HistoryService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

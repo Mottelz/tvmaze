@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import {HistoryService} from '../../controllers/history.service';
 import {HistoryItem} from '../../models/history-item';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -10,17 +9,24 @@ import {Router} from '@angular/router';
 })
 export class HistoryComponent implements OnInit {
   history: HistoryItem[];
-  constructor(private historyService: HistoryService, private router: Router) {
-    this.historyService.getHistory().then(hist => {
-      this.history = hist;
-    });
+  updated: EventEmitter<any> = new EventEmitter<any>();
+  constructor(private historyService: HistoryService) {
+    this.updated.subscribe(() => this.updateHistory());
+    this.updated.emit();
   }
 
   ngOnInit() {
   }
 
+  updateHistory() {
+    this.historyService.getHistory().then(hist => {
+      this.history = hist;
+    });
+  }
+
   clearHistory() {
-    this.historyService.clearHistory();
-    this.router.navigateByUrl('/');
+    this.historyService.clearHistory().then(() => {
+      this.updated.emit();
+    });
   }
 }
