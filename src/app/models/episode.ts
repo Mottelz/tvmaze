@@ -18,6 +18,9 @@ export class Episode {
       this.airTime = a.airtime;
       this.summary = a.summary;
       this.image = (a.image) ? a.image.original : null;
+      if (this.image) {
+        this.image = 'https' + this.image.substring(4);
+      }
     }
   }
 }

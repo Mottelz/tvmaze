@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class TvmazeService {
-  base = 'http://api.tvmaze.com';
+  base = 'https://api.tvmaze.com';
   constructor(private http: HttpClient) {}
 
   fetchShows(query: string): Observable<Show[]> {

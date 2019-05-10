@@ -24,9 +24,18 @@ export class Show {
       this.runtime = a.runtime;
       this.summary = a.summary;
       this.image = (a.image) ? a.image.original : null;
+      if (this.image) {
+        this.image = 'https' + this.image.substring(4);
+      }
       if (a._links) {
         this.lastEpLink = (a._links.previousepisode) ? a._links.previousepisode.href : null;
+        if (this.lastEpLink) {
+          this.lastEpLink = 'https' + this.lastEpLink.substring(4);
+        }
         this.nextEpLink = (a._links.nextepisode) ? a._links.nextepisode.href : null;
+        if (this.nextEpLink) {
+          this.nextEpLink = 'https' + this.nextEpLink.substring(4);
+        }
       }
     }
   }
