@@ -6,9 +6,9 @@
       <mat-panel-description fxFlex="16">Status: {{show.status}}</mat-panel-description>
     </mat-expansion-panel-header>
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <img *ngIf="show.image" src="{{show.image}}" alt="Image" fxFlex="25">
-      <div fxFlex="70">
-        <p *ngIf="show.summary">{{show.summary | strip}}</p>
+      <img *ngIf="show.image" src="{{show.image}}" alt="Image" fxFlex="10">
+      <div fxFlex="85">
+        <span *ngIf="show.summary" [innerHTML]="show.summary"></span>
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <p fxFlex="50" *ngIf="show.lastEp">Last Ep: <b>{{show.lastEp.name}}</b></p>
           <p fxFlex="50" *ngIf="show.nextEp">Next Ep: <b>{{show.nextEp.name}}</b></p>

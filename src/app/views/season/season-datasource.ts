@@ -54,6 +54,7 @@ export class SeasonDataSource extends DataSource<Episode> {
         case 'name': return compare(a.name, b.name, isAsc);
         case 'number': return compare(a.season + a.episode, b.season + b.episode, isAsc);
         case 'airDate': return compare(a.airDate, b.airDate, isAsc);
+        case 'summary': return compare(a.summary, b.summary, isAsc);
         default: return 0;
       }
     });

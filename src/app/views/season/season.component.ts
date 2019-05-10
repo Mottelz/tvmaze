@@ -14,7 +14,7 @@ export class SeasonComponent implements OnInit {
   dataSource: SeasonDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['number', 'name', 'airDate'];
+  displayedColumns = ['number', 'name', 'airDate', 'summary'];
 
   ngOnInit() {
     this.dataSource = new SeasonDataSource(this.sort, this.season);
