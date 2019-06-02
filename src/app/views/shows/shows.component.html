@@ -10,8 +10,8 @@
       <div fxFlex="85">
         <span *ngIf="show.summary" [innerHTML]="show.summary"></span>
         <div fxLayout="row" fxLayoutAlign="space-between center">
-          <p fxFlex="50" *ngIf="show.lastEp">Last Ep: <b>{{show.lastEp.name}}</b></p>
-          <p fxFlex="50" *ngIf="show.nextEp">Next Ep: <b>{{show.nextEp.name}}</b></p>
+          <p fxFlex="50" *ngIf="show.lastEp">Last Ep: <b>{{show.lastEp.season}}{{show.lastEp.episode | episodeNumberFormatter}} {{show.lastEp.name}}</b></p>
+          <p fxFlex="50" *ngIf="show.nextEp">Next Ep: <b>{{show.nextEp.season}}{{show.nextEp.episode | episodeNumberFormatter}}{{show.nextEp.name}}</b></p>
         </div>
         <mat-action-row>
           <button mat-flat-button color="primary" [routerLink]="['/show', show.id]">Details</button>
